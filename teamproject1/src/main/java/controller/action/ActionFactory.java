@@ -43,8 +43,6 @@ public class ActionFactory {
 			action = new MemberFindpwAction();
 		}else if(command.equals("member_findid_after_form")) {
 			action = new MemberFindidAfterFormAction();
-		}else if(command.equals("member_login_susess_form")) {
-			action = new MemberLoginSuseccAction();
 		}
 		
 		return action;

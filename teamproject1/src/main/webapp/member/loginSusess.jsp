@@ -14,5 +14,11 @@
 <a href="javascript:history.back()">이전메뉴</a><br>
 <a href="OttServlet?command=">마이페이지</a><br>
 <a href="OttServlet?command=">회원정보수정</a><br>
+ <%
+			 
+	session.setAttribute("member_mid", "5235268");
+	response.sendRedirect("메인주소");
+	%>
+
 </body>
 </html>
