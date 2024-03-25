@@ -18,8 +18,8 @@ commit;
 
 # 커넥션풀
 
-<Resource name="jdbc/myoracle" auth="Container"
-type="javax.sql.DataSource" driverClassName="oracle.jdbc.OracleDriver"
-url="jdbc:oracle:thin:@127.0.0.1:1521:xe"
-username="test" password="test" maxTotal="20" maxIdle="10"
-maxWaitMillis="-1"/>
+<Resource auth="Container"
+                  driverClassName="oracle.jdbc.OracleDriver" maxIdle="10"
+                  maxTotal="20" maxWaitMillis="-1" name="jdbc/myoracle"
+                  password="test" type="javax.sql.DataSource"
+                  url="jdbc:oracle:thin:@192.168.0.22:1521:xe" username="test" />

@@ -1,4 +1,4 @@
-package com.saeyan.controller.action;
+package controller.action;
 
 import java.io.IOException;
 
@@ -6,11 +6,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class BoardDeleteAction implements Action {
+public class MemberLoginSuseccAction implements Action {
 
 	@Override
 	public void exeute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		request.getRequestDispatcher("member/loginSusess.jsp")
+		.forward(request, response);
 
 	}
 

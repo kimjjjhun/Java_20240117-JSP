@@ -12,6 +12,7 @@
 
 <!-- member.js 스크립트를 외부에서 가져옴 -->
 <script src="script/member.js"></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -43,6 +44,7 @@
 			<div class="joinAndEmailFind">
 				<a href="OttServlet?command=member_insert_form">회원가입</a> <a href="OttServlet?command=member_findid_form">아이디 찾기</a>
 			</div>
+			
 		</div>
 	</main>
 </body>

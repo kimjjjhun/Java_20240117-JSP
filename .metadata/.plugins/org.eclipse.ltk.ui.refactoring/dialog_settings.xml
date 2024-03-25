@@ -14,4 +14,8 @@
 		<item key="patterns" value="*"/>
 		<item key="deleteSubPackages" value="true"/>
 	</section>
+	<section name="RefactoringWizard.Clean Up">
+		<item key="width" value="662"/>
+		<item key="height" value="476"/>
+	</section>
 </section>
