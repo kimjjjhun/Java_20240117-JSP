@@ -27,7 +27,13 @@
 			mVo.setEmail(request.getParameter("email"));
 			mVo.setPhone(request.getParameter("phone"));
 			mVo.setAddress(request.getParameter("address"));
+			mVo.setDetailAddress(request.getParameter("detailAddress"));
 			
+			// 주소와 상세주소를 합쳐서 하나의 주소로 저장합니다.
+	        String address = request.getParameter("address");
+	        String detailAddress = request.getParameter("detailAddress");
+	        String fullAddress = address + " " + detailAddress;
+	        mVo.setAddress(fullAddress);
 			
 			System.out.println("mVo>>" + mVo);
 			int result = MemberDAO.getInstance().insertMember(mVo);
