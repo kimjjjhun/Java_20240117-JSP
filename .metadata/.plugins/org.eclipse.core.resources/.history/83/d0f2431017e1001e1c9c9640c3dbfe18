@@ -1,0 +1,53 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="join.css"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="script/member.js"></script>
+</head>
+<body>
+	<form action="join.do" method="post" name="frm" class="joinForm">
+			 <div class="textForm">
+				
+				<input type="text" name="name" class="name" placeholder="이름">
+			</div>
+			<div class="textForm">
+				
+				<input type="text" name="nickname" class="nickname" placeholder="닉네임">
+			</div>
+			<div class="textForm">
+				
+				<input type="button" value="중복 체크" onclick="idCheck()" class="checkbtn">
+				<input type="text" name="userid" id="userid" class="id" placeholder="아이디">
+				<input type="hidden" name="reid"> 
+			</div>
+			<div class="textForm">
+				
+				<input type="password" name="pwd" class="pw" placeholder="비밀번호">
+			</div>
+			<div class="textForm">
+				
+				<input type="password" name="pwd_check" class="pw" placeholder="비밀번호재입력">
+			</div>
+			<div class="textForm">
+				
+				<input type="text" name="email" class="email" placeholder="이메일">
+			</div>
+			<div class="textForm">
+				
+				<input type="text" name="phone" class="cellphoneNo" placeholder="전화번호">
+			</div>
+			<div class="textForm">
+				<p>등급
+				<input type="radio" name="admin" value="0" checked="checked"> 일반회원 
+				<input type="radio" name="admin" value="1"> 관리자</p>
+			</div>
+			<div class="textForm">
+				<input type="submit" class="btn" value="S I G N U P" onclick="return joinCheck()">
+			</div>
+	</form>
+</body>
+</html>

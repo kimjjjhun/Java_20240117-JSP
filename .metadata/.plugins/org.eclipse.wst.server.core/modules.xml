@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<modules>
+  <module moduleId="org.eclipse.jst.jee.server:web-study-03"/>
+  <module moduleId="org.eclipse.jst.jee.server:web-study-10"/>
+  <module moduleId="org.eclipse.jst.jee.server:Netflix" serverId="Tomcat v9.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:web-study-05" serverId="Tomcat v9.0 Server at localhost"/>
+</modules>

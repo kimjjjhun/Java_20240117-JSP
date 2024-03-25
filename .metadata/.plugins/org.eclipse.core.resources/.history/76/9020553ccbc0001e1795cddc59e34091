@@ -1,0 +1,11 @@
+package ex02;
+
+public class Players {
+
+	public static void main(String[] args) {
+		MP3Player mp3 = new MP3Player();
+		System.out.println(mp3);
+
+	}
+
+}

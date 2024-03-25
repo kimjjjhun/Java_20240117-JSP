@@ -1,0 +1,211 @@
+package com.magic.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.servlet.jsp.jstl.sql.Result;
+/*String sql = "select * from employees where id = ?";
+		int result = -1;
+		try {
+			// 매핑
+			con = getConnection();
+			pstmt = con.prepareStatement(sql);
+
+			pstmt.setString(1, id);
+			// result에 pstmt값을 저장
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (con != null)
+					con.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
+		*/
+
+import com.magic.dto.EmployeesVO;
+
+public class EmployeesDAO {
+	private static EmployeesDAO instance = new EmployeesDAO();
+	private Connection con = null;
+	private PreparedStatement pstmt = null;
+	private ResultSet rs = null;
+
+	private EmployeesDAO() {
+
+	} // 싱글톤패턴
+
+	public static EmployeesDAO getInstance() {
+		return instance;
+	}
+
+	private Connection getConnection() throws Exception {
+		// DB 주소,계정
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String user = "ezen";
+		String password = "1234";
+
+		// 1.드라이버로드
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		// 2.DB접속
+		return DriverManager.getConnection(url, user, password);
+	}
+
+	public int userCheck(String id, String pwd, String lev) {
+		// 3.sql구문전송
+		String sql = "select * from employees where id = ?";
+		int result = -1;
+		try {
+			// 4.매핑
+			con = getConnection();
+			pstmt = con.prepareStatement(sql);
+
+			pstmt.setString(1, id);
+			// result에 pstmt값을 저장
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				if (pwd.equals(rs.getString("pass"))) {
+					if (lev.equals(rs.getString("lev"))) {
+						// 삼항연산자 a와 등급이 같으면 관리자로그인
+						// 아닐시엔 일반회원로그인
+						result = lev.equals("A") ? 2 : 3;
+					} else {
+						result = 1; // 등급이 다름
+					}
+				} else {
+					result = 0; // 비밀번호 틀림
+				}
+			} else {
+				result = -1; // 아이디 틀림
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (con != null)
+					con.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
+	//id 전체 데이터 가져오기
+	public EmployeesVO getMember(String id) {
+		String sql = "select * from employees where id = ?";
+		EmployeesVO vo = new EmployeesVO();
+		
+		try {
+			con = getConnection();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				// 여기이름은 DB필드명과 똑같아야함 
+				vo.setId(rs.getString("id"));
+				vo.setPass(rs.getString("pass"));
+				vo.setName(rs.getString("name"));
+				vo.setLev(rs.getString("lev"));
+				vo.setEnter(rs.getDate("enter")); //날짜
+				vo.setGender(Integer.parseInt(rs.getString("gender")));
+				vo.setPhone(rs.getString("phone"));
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (con != null)
+					con.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return vo;
+	}
+	//회원정보수정 업데이트
+	public int updateEmployee(EmployeesVO vo) {
+		String sql = "update employees set pass=?,name=?,lev=?,gender=? "
+				+ ", phone=? where id=?";
+		int result = -1;
+		
+		try {
+			con = getConnection();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1,vo.getPass());
+			pstmt.setString(2,vo.getName());
+			pstmt.setString(3,vo.getLev());
+			pstmt.setString(4,String.valueOf(vo.getGender()));
+			pstmt.setString(5,vo.getPhone());
+			pstmt.setString(6,vo.getId());
+			
+			result = pstmt.executeUpdate();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (con != null)
+					con.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
+	
+	}
+
+	public void insertEmployee(EmployeesVO vo) {
+		
+		String sql = "insert into employees(id,pass,name,lev,enter,gender,phone)"
+				+ "values(?,?,?,?,sysdate,?,?)";
+		
+		try {
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				con = getConnection();
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, vo.getId());
+				pstmt.setString(2, vo.getPass());
+				pstmt.setString(3, vo.getName());
+				pstmt.setString(4, vo.getLev());
+				pstmt.setString(5, ""+vo.getGender());
+				pstmt.setString(6, vo.getPhone());
+				pstmt.executeUpdate();
+				
+				if (pstmt != null)
+					pstmt.close();
+				if (con != null)
+					con.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	
+	}
+}

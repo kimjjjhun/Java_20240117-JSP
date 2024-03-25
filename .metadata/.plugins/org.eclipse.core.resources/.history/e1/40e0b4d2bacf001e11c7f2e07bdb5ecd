@@ -1,0 +1,186 @@
+package movie;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.Instant;
+import java.util.ArrayList;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@AllArgsConstructor
+
+public class Movie {
+	
+//	public void setId(long id) {
+//		this.id = id;
+//	}
+//
+//	public void setTitle(String title) {
+//		this.title = title;
+//	}
+
+	public long getId() {
+		return id;
+	}
+
+//	public void setId(long id) {
+//		this.id = id;
+//	}
+
+	public String getTitle() {
+		return title;
+	}
+
+//	public void setTitle(String title) {
+//		this.title = title;
+//	}
+
+	private static String[] temp;
+	private long id;  // 영화 고유 번호
+	private String title; // 영화 제목
+	private String genre; // 영화 장르
+	
+	private static final File file = new File("src/movie/movies.txt");
+	
+//	public Movie(long id, String title, String genre ) {
+		
+		// this.id = id;
+		// this.title = title;
+		// this.genre = genre;
+		
+//	}
+	public Movie( String title, String genre) {
+		this(Instant.now().getEpochSecond(), title, genre);
+		long id = Instant.now().getEpochSecond();
+		System.out.println("id : " + Instant.now().getEpochSecond());
+	}
+
+public static ArrayList<Movie> findAll() {
+	
+	ArrayList<Movie> movies = new ArrayList<Movie>();
+	BufferedReader br = null;
+	String line = null;
+	try {
+		br = new BufferedReader(new FileReader(file));
+		while( (line = br.readLine()) != null) {
+			// 1627175707,에벤져스,판타지 한 줄 읽어왔다.
+			
+			String[] temp = line.split(",");   //기본적으로 ArrayList에는 10개배열까지 저장이됨
+			/*
+			 * temp[0] : 1627175707
+			 * temp[1] : 에벤져스
+			 * temp[2] : 판타지
+			*/
+			/*파일에서 읽어온 데이터는 문자로 인식한다. 따라서
+			 * 1627175707 이것도 문자다. 그러므로 id저장하기 위해서는
+			 * 문자열을 Long형으로 변환하는 작업이 필요하다.
+			 */
+			
+			Movie m = new Movie(Long.parseLong(temp[0]), temp[1], temp[2]);
+			movies.add(m); //ArrList에 파일 저장된 영화 목록 추가
+		}
+		
+		br.close(); //연결 통로 끊기
+		
+	} catch (FileNotFoundException e) {
+		e.printStackTrace();
+	} catch (IOException e) {
+		e.printStackTrace();
+	}
+	
+	return movies;   // 영화 객체가 담긴 ArrayList 반환
+}
+
+/*@Override
+public String toString() {
+	
+	return "Movie [id=" + id + ", title=" + title + " genre=" + genre + "]";
+}*/
+
+@Override
+public String toString() {
+	
+	return String.format("[%d]: %s(%s)", id, title, genre);
+	//                    정수형   실수형
+}
+
+public void save() {                   // 
+	try {
+		                      //Movies.txt 파일에 이어서 쓰기 설정(true).
+		FileWriter fw = new FileWriter(file, true);
+		fw.write(this.toFileString() + "\n");
+		fw.close();
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+	                     
+}
+
+private String toFileString() {
+	
+	return String.format("%d,%s,%s", id , title , genre);
+}
+
+public static void delete(String movieId){   // delete 메소드 생성(참조변수 문자열 movieId)
+	BufferedReader br = null;                // 버퍼리더 br 초기값 null; 입력
+	String text = "";                        // 문자열 text,line 초기값 ""; 입력
+	String line = "";
+	
+	try{                                                 // try-catch문으로 예외처리
+		 br = new BufferedReader(new FileReader(file));  // 버퍼리더로 파일목록을 가져온다.
+		 
+		 while((line = br.readLine() )!=null ) {         //반복문을 통하여 null값이 들어올때까지 반복
+			 String[] temp = line.split(",");           //String[]temp 배열에 line.split 을 통하여 ","단위로 나누어 입력
+			 if(movieId.equals(temp[0])) {      //movieId와temp[0]안의 값이 같을경우 continue를 통해서 위로 올라감
+				 continue;
+			 }
+			 text += line + "\n";       // 거짓일경우 text 값을찍고 줄바꿈실행
+		 }
+		 br.close();                  // while문에 null값으로 인하여 빠져나올경우 버퍼리더의 경로를 없애는 문장
+		 
+		 FileWriter fw = new FileWriter(file);   // fileWriter 을 통해서 파일을 읽어옴
+		 fw.write(text);                         // fw.write(text); 호출
+		 
+		 fw.close();                             // fileWriter 경로 제거
+	}catch(Exception e) {
+		e.printStackTrace();
+	}
+	
+}
+
+public static ArrayList<Movie> findAll(String movieID) {
+	ArrayList<Movie> movies = new ArrayList<Movie>();
+	Movie movie = null;
+	BufferedReader bf = null;
+	
+	try {
+	bf = new BufferedReader(new FileReader(file));
+	String line = null;
+	
+	while((line = bf.readLine())!=null) {
+		String[] temp = line.split(",");
+		if(movieID.equals(temp[0])) {
+			Movie m =new Movie(
+					Long.parseLong(temp[0]),
+					temp[1],
+					temp[2]	
+					);
+			movies.add(m);
+			break;
+		}
+	}
+	bf.close();
+	return movies;
+}catch(FileNotFoundException e) {  
+	e.printStackTrace();
+}catch(IOException e) {
+	e.printStackTrace();
+}
+	return movies;
+}
+}

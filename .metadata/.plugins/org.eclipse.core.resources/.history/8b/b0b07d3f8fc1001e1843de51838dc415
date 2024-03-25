@@ -1,0 +1,17 @@
+package ex01;
+
+public class Car {
+	String color;           
+	String gear;
+	int door;
+	
+	 Car() {
+		
+	}
+     Car(String c,String g,int d) {
+    	color = c;
+    	gear = g;
+    	door = d;
+    	
+    }
+}

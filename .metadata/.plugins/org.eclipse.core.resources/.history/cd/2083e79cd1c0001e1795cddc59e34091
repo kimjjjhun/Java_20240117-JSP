@@ -1,0 +1,27 @@
+package ex02;
+
+public class Players {
+
+	public static void main(String[] args) {
+		MediaPlayer mp;
+        
+		mp = new MP3Player();
+		mp.playOn();
+		mp.playOff();
+		mp.playstop();
+		
+		
+		mp = new WAVPlayer();
+		mp.playOn();
+		mp.playOff();
+		mp.playstop();
+		
+		mp = new FLACPlayer();
+		mp.playOn();
+		mp.playOff();
+		mp.playstop();
+		
+
+	}
+
+}

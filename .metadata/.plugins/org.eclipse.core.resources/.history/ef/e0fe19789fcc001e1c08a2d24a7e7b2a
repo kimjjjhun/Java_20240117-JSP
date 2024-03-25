@@ -1,0 +1,9 @@
+package movie;
+
+public interface Menu {   //인터페이스 메뉴구현
+	void print();    // 메뉴출력
+	Menu next();     // 다음 메뉴 이동
+} 
+
+// 메뉴에 있는 2가지 추상메소드를 구현해야된다.
+

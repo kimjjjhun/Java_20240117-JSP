@@ -1,0 +1,21 @@
+package ex01;
+
+public class Car {
+	String color;           
+	String gear;
+	int door;
+	
+	 Car() {
+	 this("white","auto",4);
+    }
+	 Car(Car c) {
+		 color = c.color;
+		 gear = c.gear;
+		 door = c.door;
+	 }
+	 Car(String color, String gear, int door){
+		 this.color = color;
+		 this.gear = gear;
+		 this.door = door;
+	 }
+}

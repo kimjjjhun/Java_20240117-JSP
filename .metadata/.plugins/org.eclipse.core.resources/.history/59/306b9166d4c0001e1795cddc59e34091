@@ -1,0 +1,34 @@
+package ex02;
+
+public class MP3Player implements MediaPlayer {
+	private String filename;
+	private Double filesize;
+	private Double time;
+	@Override
+	public void pause() {
+		
+		System.out.println("일시정지");
+	}
+	@Override
+	public void stop() {
+		System.out.println("되돌리기");
+	}
+	@Override
+	public void file() {
+		System.out.println("로드하기" + "파일명" + filename + "파일크기" + filesize + "시간" + time);
+	}
+	
+	
+
+	
+
+	
+	
+	
+
+	
+	
+
+	
+
+}

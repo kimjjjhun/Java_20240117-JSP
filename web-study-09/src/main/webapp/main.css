@@ -1,0 +1,18 @@
+      * {margin:0; }
+      ul,li,ol {list-style:none; margin:0; padding:0;}
+      a {text-decoration:none; color:#666;}
+      .menu {margin:50px 0 0 50px; float:left; width:200px; }
+      .menu> li { text-align:center; line-height:40px; background:#000; position:relative;}
+      .menu> li > a {color:#fff; display:block;}
+      .menu >li:hover {background:#fff;}
+      .menu >li:hover > a {color:#000;}
+      .sub {width:100%; background:#ccc; display:none; position:absolute; top:0px; left:200px; width:150px; z-index:3;}
+      .sub >li:hover {background:gold; display:block; }
+      header {float:right; margin-right:50px; margin-top:50PX;}
+		body {
+  background-image:url('netflixbackground.jpg');
+  background-size: cover;
+  background-color:black;
+}
+.red-color{
+      color:red; }

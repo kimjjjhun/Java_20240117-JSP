@@ -1,0 +1,102 @@
+package movie;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+@AllArgsConstructor
+@Getter
+public class Reservation {
+	
+	private long id; // 예매번호
+	private long movieId; // 영화 고유 번호
+	private String movieTitle; // 영화 제목
+	private String SeatName; // 좌석번호
+	
+	private static final File file = new File("src/movie/rsevervations.txt");
+	
+//	public Reservation(long id, long movieId, String movieTitle, String SeatName) {}
+	/*	this.id = id;
+		this.movieId = movieId;
+		this.movieTitle = movieTitle;
+		this.SeatName = SeatName;
+	} */
+		public static Reservation FindById(String reservationID) {   
+			Reservation reservation = null;          // 초기값 설정
+			BufferedReader br = null;                //   ""
+			String line = null;                      //   ""
+			 
+			try {                                    // try 문으로 예외처리
+				br = new BufferedReader(new FileReader(file));  // 버퍼리더를 통해서 file목록 호출
+				while((line = br.readLine()) != null) {         //while 문으로 반복문 실행
+					
+					String[] temp = line.split(",");            //불러온 file목록을 ","단위로 자름
+					
+					if(reservationID.equals(temp[0])) {        //예매번호와 영화목록temp[0]이 일치하면 실행
+						reservation = new Reservation(         // 
+								Long.parseLong(temp[0]),       // 새로운 예매번호
+								Long.parseLong(temp[1]),       // 
+								(temp[2]),                     // 
+								(temp[3])                      //
+										);
+						break;      // 다 찍고나서 break 문으로 제어문 종료 null값이 들어가며 while문을 빠져나옴
+					}
+				}
+			br.close();                     // 버퍼리더의 경로를 제거
+			return reservation;             // reservation 값을 Reservation값으로 돌려줌
+		}catch (Exception e) {              // 익셉션 예외처리로 오류가날경우 걸러줌
+			e.printStackTrace();
+		}
+			return null;                     // 익셉션 오류가 날경우 여기에서 null값을 위로올려서 반복문을 빠져나감
+		}
+		public static Reservation cancel(String reservationID) {
+			Reservation canceled = null;
+			BufferedReader bf = null;
+			try{
+				bf = new BufferedReader(new FileReader(file));
+				String text = " ";
+				String line = null;
+				
+				while((line = bf.readLine())!= null) {
+					String[] temp = line.split(",");
+					if(reservationID.equals(temp[0])) {
+						canceled = new Reservation(
+								Long.parseLong(temp[0]),
+								Long.parseLong(temp[1]),
+								temp[2],
+								temp[3]);
+						continue;
+					}
+					text += line+"\n";
+				}
+				bf.close();
+				//new File("src/movie/reservations.txt); => 이 경로에
+				//cancel(String reservationID) 예약번호를 제외한 파일을 다시 reservations.txt 덮어쓴다.
+				FileWriter fw = new FileWriter(file);
+				fw.write(text);
+				fw.close();
+				return canceled;
+				
+			}catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+			return null;
+		}
+		public String toString() {
+			
+			return String.format("영화 : %s, 좌석 : %s", movieTitle, SeatName);
+		}                        // 부모생성자의 값을 문자열로 출력해줌
+		                         // 영화제목 , 좌석번호
+		
+	}
+
+
+

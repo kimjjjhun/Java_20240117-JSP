@@ -1,0 +1,18 @@
+package ex01;
+
+import java.util.Scanner;
+
+public class Exception01 {
+	
+	Scanner sc = new Scanner(System.in);
+	
+	private void sysout() {
+	}
+    
+   int num1 = sc.nextInt();
+   int num2 = sc.nextInt();
+   
+   double div = (double)num1 / num2;
+
+}
+}

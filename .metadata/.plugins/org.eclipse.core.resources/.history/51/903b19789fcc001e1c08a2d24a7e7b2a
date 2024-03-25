@@ -1,0 +1,42 @@
+package movie;
+
+import java.util.Scanner;
+
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Setter
+public abstract class AbstractMenu implements Menu{   //추상클래스
+	
+	protected String menuText; //기본문구
+	protected Menu prevMenu; //이전메뉴
+	
+	protected static final Scanner sc = new Scanner(System.in);
+	
+/*    AbstractMenu(String menuText, Menu prevMenu){
+    	this.menuText = menuText;
+    	this.prevMenu = prevMenu;
+    }
+    
+    public void setPrevMenu(Menu prevMenu) {
+    	this.prevMenu = prevMenu;
+    }  */
+
+	@Override
+	public void print() {
+		System.out.println("\n" + menuText); //메뉴 출력
+	}
+
+/*	@Override
+	public Menu next() {
+		
+		return null;
+	}    */
+
+}
+
+// 인터페이스에 상속받은 2가지 추상메소드를 구현하지 않았기에
+// 아직 미완성 추상클래스라는걸 선언하기위해 앞쪽에 abstract 입력

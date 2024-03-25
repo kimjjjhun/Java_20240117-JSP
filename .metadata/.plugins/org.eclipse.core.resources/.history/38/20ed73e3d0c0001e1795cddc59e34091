@@ -1,0 +1,36 @@
+package ex02;
+
+public class MP3Player implements MediaPlayer {
+	
+	
+
+	private String filename;
+	private int replaytime;
+	private String filesize;
+	
+
+	@Override
+	public void play() {
+		System.out.println("MP3 파일 재생중...");
+	}
+
+	@Override
+	public void pause() {
+		System.out.println("일시정지합니다.");
+	}
+
+	@Override
+	public void stop() {
+		System.out.println("처음으로 되돌립니다.");
+	}
+
+	@Override
+	public void file() {
+		System.out.println("미디어파일을 로딩합니다.");
+	}
+	@Override
+	public String toString() {
+		return "MP3Player [filename=" + filename + ", replaytime=" + replaytime + ", filesize=" + filesize + "]";
+	}
+
+}

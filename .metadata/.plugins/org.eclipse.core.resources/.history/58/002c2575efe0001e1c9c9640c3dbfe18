@@ -1,0 +1,12 @@
+package com.ezen.dao;
+ 
+                       //싱글톤패턴 DAO
+public class MovieDAO {
+	private static MovieDAO instance = new MovieDAO();
+	
+	private MovieDAO() {}
+	
+	public static MovieDAO getInstance() {
+		return instance;
+	}
+}

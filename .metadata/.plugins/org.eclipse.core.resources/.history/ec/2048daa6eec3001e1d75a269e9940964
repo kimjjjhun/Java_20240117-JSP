@@ -1,0 +1,26 @@
+
+package ex03;
+
+
+public class Tv extends Product{
+
+	
+	
+
+
+
+	void tv(){
+		super(100);
+	}
+
+	public String toString() {
+		return "Tv []";
+	}
+	
+	
+
+	
+	
+	
+
+}

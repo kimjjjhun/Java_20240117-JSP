@@ -1,0 +1,31 @@
+package com.ezen.dao;
+
+import java.util.List;
+
+import com.ezen.dto.MovieVO;
+
+//싱글톤패턴 DAO
+public class MovieDAO {
+	private static MovieDAO instance = new MovieDAO();
+	
+	private MovieDAO() {}
+	
+	public static MovieDAO getInstance() {
+		return instance;
+	}
+	
+	//전체 리스트 가져오기
+	public List<MovieVO> movieList(){
+		return null;
+	}
+	
+	//영화1개 가져오기
+	public MovieVO getOneMovie(int code) {
+		return null;
+	}
+	
+	//영화 저장
+	public void insertMovie(MovieVO) {
+		
+	}
+}

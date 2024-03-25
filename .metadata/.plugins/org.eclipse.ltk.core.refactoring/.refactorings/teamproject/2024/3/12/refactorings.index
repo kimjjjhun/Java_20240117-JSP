@@ -1,0 +1,14 @@
+1710734838390	Move 'MemberServlet.java' to 'controller'
+1710734944416	Delete element
+1710745161553	Rename resource 'main.jsp'
+1710745276085	Delete element
+1710745533778	Rename resource 'MemberInsertAction.jsp'
+1710748723219	Delete element
+1710749239226	Rename resource 'memberinsertaction.jsp'
+1710749246087	Rename resource 'memberinsert.jsp'
+1710817524893	Rename resource 'MemberIdCheck.java'
+1710817664242	Delete element
+1710825677873	Move 'DBCP.jsp' to 'webapp'
+1710826694848	Delete element
+1710826762216	Rename resource 'memberList.jsp'
+1710827845943	Rename resource 'memberJoin.jsp'

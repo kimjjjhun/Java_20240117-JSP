@@ -1,0 +1,228 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  font-family:sans-serif;
+
+}
+
+body {
+	height : 100px;
+  background-image:url('netflixbackground.jpg');
+  background-size: cover;
+}
+input.name{
+	color:white;
+}
+input.nickname{
+	color:white;
+}
+input.id{
+	color:white;
+}
+input.pw{
+	color:white;
+}
+input.email{
+	color:white;
+}
+input.cellphoneNo{
+	color:white;
+}
+
+.joinForm {
+  position:absolute;
+  width:400px;
+  height:400px;
+  padding: 30px 20px;
+  text-align:center;
+  top:40%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  border-radius: 15px;
+}
+
+.textForm {
+  border-bottom: 2px solid #adadad;
+  margin: 30px;
+  padding: 10px 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+    align-items: center;
+}
+
+.textForm select {
+    margin-left: 60px;
+    position:relative;
+    left:40%;
+    transform: translateX(-50%);
+ 	float: left;
+ 	background-image: linear-gradient(125deg,red,yellow);
+    background-position: left;
+    background-size: 200%;
+    width:40%;
+    height:30px;
+    border:none;
+    color:white;
+    font-weight: bold;
+    transition: 0.4s;
+    display:inline; 
+    border-radius: 100px;
+}
+
+
+.textForm select option {
+   position:relative;
+    left:40%;
+    transform: translateX(-50%);
+ 	float: left;
+ 	background-image: linear-gradient(125deg,red,yellow);
+    background-position: left;
+    background-size: 200%;
+    width:40%;
+    height:30px;
+    border:none;
+    color:white;
+    font-weight: bold;
+    transition: 0.4s;
+    display:inline; 
+    border-radius: 100px;
+}
+
+input.name::placeholder {
+	font-size: 15px;
+    color: white;
+    font-weight: 20px;
+}
+input.pw::placeholder {
+    font-size: 15px;
+    color: white;
+    font-weight: 20px;
+}
+input.email::placeholder {
+    font-size: 15px;
+    color: white;
+    font-weight: 20px;
+}
+input.cellphoneNo::placeholder {
+    font-size: 15px;
+    color: white;
+    font-weight: 20px;
+}
+input.nickname::placeholder {
+    font-size: 15px;
+    color: white;
+    font-weight: 20px;
+}
+input.id::placeholder {
+    font-size: 15px;
+    color: white;
+    font-weight: 20px;
+}
+
+.id {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+.pw {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+.name {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+
+.email {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+
+.nickname {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+
+.cellphoneNo {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+
+.btn {
+  position:relative;
+  left:40%;
+  transform: translateX(-50%);
+  margin-bottom: 40px;
+  width:80%;
+  height:40px;
+  background-image: linear-gradient(125deg,red,yellow);
+  background-position: left;
+  background-size: 200%;
+  color:white;
+  font-weight: bold;
+  cursor:pointer;
+  transition: 0.4s;
+  display:inline;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  background-position: right;
+  }
+
+ .checkbtn{
+    position:relative;
+    left:40%;
+    transform: translateX(-50%);
+ 	float: left;
+ 	margin-right: 1px;
+ 	background-image: linear-gradient(125deg,red,yellow);
+    background-position: left;
+    background-size: 200%;
+    width:30%;
+    height:30px;
+    border:none;
+    color:white;
+    font-weight: bold;
+    transition: 0.4s;
+    display:inline; 
+    border-radius: 100px;
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+      0 10px 10px rgba(0,0,0,0.22);
+}
+.checkbtn:hover {
+  background-position: right;
+  }
+  

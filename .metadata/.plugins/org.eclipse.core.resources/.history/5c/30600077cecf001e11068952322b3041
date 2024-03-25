@@ -1,0 +1,20 @@
+package Movie;
+
+import java.io.File;
+import java.util.ArrayList;
+
+import lombok.AllArgsConstructor;
+@AllArgsConstructor
+public class Movie {
+	
+	private long id;              //영화 고유번호
+	private String title;         //영화 제목
+	private String genre;         //영화 장르
+	
+	private static final File file = new File("src/Movie/movies.txt");   // 영화를 저장한 텍스트문서 file에 저장
+
+}
+public static ArrayList<Movie> findAll(){
+	
+}
+}

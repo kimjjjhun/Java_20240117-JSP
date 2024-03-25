@@ -1,0 +1,11 @@
+package ex01;
+
+import java.util.Scanner;
+
+public class Exception {
+	
+	Scanner sc = new Scanner(System.in);
+    
+   
+
+}

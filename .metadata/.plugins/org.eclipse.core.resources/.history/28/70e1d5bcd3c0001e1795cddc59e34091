@@ -1,0 +1,26 @@
+package ex02;
+
+public interface MediaPlayer {
+	
+	
+	
+	default public void play() {
+	}
+			
+		
+	
+	default public void stop() {
+		
+	}
+	default public void off() {
+		
+	}
+     default public void file() {
+    	 
+     }
+     void playOn();
+     void playOff();
+     void playstop();
+     
+    
+}

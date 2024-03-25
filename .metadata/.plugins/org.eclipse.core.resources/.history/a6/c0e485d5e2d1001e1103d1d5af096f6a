@@ -1,0 +1,60 @@
+package Movie;
+
+public class MainMenu extends AbstractMenu{  // AbstractMenu를 상속받음(자식클래스)
+	
+	@Override
+	public Menu next() {                                           //메뉴인터페이스의 next() 메서드를 상속하여 구현하기위해 오버라이딩
+		switch(sc.nextLine()) {                                    // switch ~ case 문으로 반복문을 돌린다. 값은 입력받는다.
+		case "1":
+			reserve();            // 영화예매                        // 1번을 입력하면 reserve 생성자 메소드가 실행이 되고 값이 MainMenu로 올라간다.
+			return this;
+		case "2":
+			checkReservation();  //예매확인
+			return this;
+		case "3":
+			cancelReservation();  // 예매취소
+			return this;
+		case "4":
+			if(! checkAdminPassword()) {
+				System.out.println("비밀번호를 다시 입력해주세요.");
+			return this;
+		}
+			
+		case "5": return prevMenu;                                // 5번을 입력하면 prevMenu 생성자 메소드가 실행이 된다.
+		default : return this;                                    // 1~5번이 아닌 다른값을 누를경우 MainMenu의 인터페이스가 다시 실행된다.
+		}
+		
+		
+		
+	}
+	private boolean checkAdminPassword() {
+	
+	return false;
+}
+	private void cancelReservation() {
+	}
+
+	private void checkReservation() {
+	}
+	
+	private void reserve() {
+		
+			
+		
+}
+    private static final MainMenu instance = new MainMenu(null);
+	private static final String MAIN_MENU_TEXT =
+           			"1: 영화 예매하기\n" +
+					"2: 예매 확인하기\n" +
+					"3: 예매 취소하기\n" +
+					"4: 관리자 메뉴\n" +
+					"5: 종료\n\n" +
+					"메뉴를 선택하세요: ";
+	private MainMenu(Menu prevMenu) {
+		super(MAIN_MENU_TEXT, prevMenu);
+	}
+	public static MainMenu getInstance() {
+		return instance;
+	}
+
+}

@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+* {margin:0; padding:0;}
+
+ul, ol, li {list-style:none; margin:0; padding:0;}
+
+a {text-decoration: none; color:#000;}
+
+.loginWrap {width:400px; margin:0 auto; padding-top:80px;}
+
+.loginWrap > h1 {text-align: center; margin-bottom:30px;}
+
+/* 이메일 + 비밀번호 입력 input */
+.loginFormBox {margin-top:8px; position:relative;}
+
+.loginFormBox > input {background-color: #fff; border:1px solid #cdcdcd; box-sizing: border-box; height:48px; margin-top:8px; padding:13px 73px 13px 16px; width:100%;}
+
+.loginFormBox > input::placeholder {color:#999; font-weight:bold; font-size:14px;}
+
+.pwdFind {margin:10px 0; text-align: right;}
+
+.pwdFind > a {text-decoration: underline; color:#999; font-size:13px; letter-spacing: -.4px; font-weight:bold; line-height:1.62;}
+
+/* 로그인 버튼 */
+.loginBtn {width:100%; border-radius: 24px; background-color: #000; color:#fff; text-align: center; line-height:48px; height:48px; margin-top:15px; font-size:14px; font-weight:bold; letter-spacing: -.4px;}
+
+.joinAndEmailFind {margin-top:30px; text-align: center;}
+
+.joinAndEmailFind > a {text-decoration: underline; font-size:13px;}
+
+.joinAndEmailFind > a:first-child::after {display: inline-block; content:""; margin:0 15px; width:1px; height:12px; background:#bcbcbc; font-weight:bold;}
+
+.signBtn > input {width:100%; border-radius: 24px; background-color: #000; color:#fff; text-align: center; line-height:48px; height:48px; margin-top:15px; font-size:14px; font-weight:bold; letter-spacing: -.4px;}
