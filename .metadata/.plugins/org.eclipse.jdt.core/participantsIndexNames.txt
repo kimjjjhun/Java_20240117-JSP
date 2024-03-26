@@ -51,6 +51,8 @@ C:\java\Jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3391127638.ind
 \Netflix\src\main\java
 C:\java\Jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3269099228.index
 \web-study-07\src\main\java
+C:\java\Jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\669016357.index
+\teamprojectA\src\main\java
 C:\java\Jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\517446357.index
 \TeamProject\src\main\java
 C:\java\Jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2155944663.index
@@ -67,6 +69,8 @@ C:\java\Jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\447749564.inde
 \jsp-study-009\src\main\java
 C:\java\Jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3682409388.index
 \web-study-etc\src\main\java
+C:\java\Jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1235341236.index
+\teamprojectA\src\main\java
 C:\java\Jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1710148052.index
 \web-study-01\src\main\java
 C:\java\Jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2374255814.index

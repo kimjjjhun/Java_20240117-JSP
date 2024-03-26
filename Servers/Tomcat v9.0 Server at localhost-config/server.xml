@@ -108,14 +108,8 @@
 				</Valve>
 
 				
-			<Context docBase="teamproject1" path="/teamproject1" reloadable="true" source="org.eclipse.jst.jee.server:teamproject1">
-			<Resource auth="Container"
-                  driverClassName="oracle.jdbc.OracleDriver" maxIdle="10"
-                  maxTotal="20" maxWaitMillis="-1" name="jdbc/myoracle"
-                  password="test" type="javax.sql.DataSource"
-                  url="jdbc:oracle:thin:@192.168.0.22:1521:xe" username="test" />
-</Context>
-			</Host>
+			
+			<Context docBase="teamprojectA" path="/teamprojectA" reloadable="true" source="org.eclipse.jst.jee.server:teamprojectA"/></Host>
 
 		</Engine>
 	</Service>
