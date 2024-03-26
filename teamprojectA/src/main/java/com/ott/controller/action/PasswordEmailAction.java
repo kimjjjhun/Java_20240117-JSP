@@ -6,12 +6,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class MemberFindpwFormAction implements Action {
+public class PasswordEmailAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("member/FindPw.jsp")
-		.forward(request, response);
+		// TODO Auto-generated method stub
+
 	}
 
 }

@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 public class MemberFindidAfterFormAction implements Action {
 
 	@Override
-	public void exeute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("member/findIdResult.jsp")
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getRequestDispatcher("member/FindIdResult.jsp")
 		.forward(request, response);
 	}
 

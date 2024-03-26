@@ -9,12 +9,11 @@ import lombok.ToString;
 @ToString
 
 public class MemberVO {
-	private String userid;
+	private String userId;
 	private int admin;
 	private String name;
 	private String pwd;
 	private String email;
 	private String phone;
 	private String address;
-	private String detailAddress;
 }

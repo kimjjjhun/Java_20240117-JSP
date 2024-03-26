@@ -16,13 +16,13 @@ import com.ott.dto.MemberVO;
 public class MemberLoginAction implements Action {
 
 	@Override
-	public void exeute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String userid = request.getParameter("userid");
 		String pwd = request.getParameter("pwd");
 		
 		MemberDAO mDao = MemberDAO.getInstance();
-		String url = "member/memberLogin.jsp";
+		String url = "member/MemberLogin.jsp";
 		
 		//-1 : 비밀번호가 틀림" 0 :아이디가 틀림 1 : 로그인성공
 		int result = mDao.userCheck(userid,pwd);
@@ -32,7 +32,7 @@ public class MemberLoginAction implements Action {
 			session.setAttribute("loginUser",mVo);
 			
 			request.setAttribute("message","로그인 성공");
-			url = "member/loginSusess.jsp";
+			url = "member/Main.jsp";
 		}else if(result == 0) {
 			request.setAttribute("message","존재하지않는 ID");
 		}else if(result == -1) {

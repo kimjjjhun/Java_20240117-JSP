@@ -109,7 +109,10 @@
 
 				
 			
-			<Context docBase="C:\java\Jsp\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\java\Jsp\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\teamprojectA" path="/teamprojectA" reloadable="true" source="org.eclipse.jst.jee.server:teamprojectA"/></Host>
+			<Context docBase="C:\java\Jsp\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\java\Jsp\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\teamprojectA" path="/teamprojectA" reloadable="true" source="org.eclipse.jst.jee.server:teamprojectA">
+			<Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" maxIdle="10" maxTotal="20" maxWaitMillis="-1" name="jdbc/myoracle" password="test" type="javax.sql.DataSource" url="jdbc:oracle:thin:@192.168.0.22:1521:xe" username="test"/>
+                  </Context>
+			<Context docBase="C:\java\Jsp\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\web-study-11" path="/web-study-11" reloadable="true" source="org.eclipse.jst.jee.server:web-study-11"/></Host>
 
 		</Engine>
 	</Service>

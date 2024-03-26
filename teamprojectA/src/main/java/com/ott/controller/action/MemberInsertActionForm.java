@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 public class MemberInsertActionForm implements Action {
 
 	@Override
-	public void exeute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.getRequestDispatcher("member/memberInsert.jsp")
+		request.getRequestDispatcher("member/MemberInsert.jsp")
 		.forward(request, response);
 	}
 

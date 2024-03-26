@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="script/member.js"></script>
+<script type="text/javascript" src="script/Member.js"></script>
 </head>
 <body>
 
@@ -23,10 +23,10 @@
 				<script type="text/javascript">
 					opener.document.frm.userid.value="";
 					</script>
-					${userid}는 <font color="red"><b>사용</b></font> 불가능 ID입니다.				
+					${userId}는 <font color="red"><b>사용</b></font> 불가능 ID입니다.				
 			</c:if>
 			<c:if test="${result == -1 }">
-					${userid}는 <font color="red"><b>사용 가능</b></font>한 ID입니다.
+					${userId}는 <font color="red"><b>사용 가능</b></font>한 ID입니다.
 				<input type="button" value="사용" class="cancel" onclick="idok()">				
 			</c:if>
 	</form>

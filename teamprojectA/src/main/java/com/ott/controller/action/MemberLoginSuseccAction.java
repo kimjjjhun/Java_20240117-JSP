@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 public class MemberLoginSuseccAction implements Action {
 
 	@Override
-	public void exeute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("member/loginSusess.jsp")
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getRequestDispatcher("member/LoginSusess.jsp")
 		.forward(request, response);
 
 	}

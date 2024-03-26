@@ -14,7 +14,7 @@ import com.ott.dao.MemberDAO;
 public class MemberFindidAction implements Action {
 
 	@Override
-	public void exeute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
@@ -22,6 +22,7 @@ public class MemberFindidAction implements Action {
 		MemberDAO mDao = MemberDAO.getInstance();
 		
 		String name = request.getParameter("name");
+		
 		String email = request.getParameter("email");
 		
 		String userid = mDao.findId(name, email);
@@ -30,7 +31,7 @@ public class MemberFindidAction implements Action {
 		
 		System.out.println("userid " + userid);
 		
-		request.getRequestDispatcher("member/findIdResult.jsp").forward(request, response);
+		request.getRequestDispatcher("member/FindIdResult.jsp").forward(request, response);
 	}
 
 }

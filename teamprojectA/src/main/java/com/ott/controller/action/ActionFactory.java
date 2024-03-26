@@ -40,10 +40,7 @@ public class ActionFactory {
 			action = new MemberFindpwAction();
 		}else if(command.equals("member_findid_after_form")) {
 			action = new MemberFindidAfterFormAction();
-		}else if(command.equals("kakao_login_form")) {
-			action = new KakaoLoginFormAction();
 		}
-		
 		return action;
 	}
 }

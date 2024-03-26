@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 public class MemberIdcheckFormAction implements Action {
 
 	@Override
-	public void exeute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("member/idcheck.jsp")
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getRequestDispatcher("member/IdCheck.jsp")
 		.forward(request, response);
 
 	}

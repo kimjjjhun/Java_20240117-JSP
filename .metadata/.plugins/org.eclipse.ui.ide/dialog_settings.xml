@@ -9,6 +9,7 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\java\Jsp\project-dev"/>
 			<item value="C:\Users\17\Downloads\Java_20240117-JSP-master\Java_20240117-JSP-master\teamproject1"/>
 			<item value="C:\java\Jsp\web-study-10"/>
 		</list>

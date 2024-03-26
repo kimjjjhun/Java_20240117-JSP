@@ -22,7 +22,7 @@ public class OttServlet extends HttpServlet {
 		ActionFactory af = ActionFactory.getInstance();
 		Action action = af.getAction(command);
 		if (action != null) {
-			action.exeute(request, response);
+			action.execute(request, response);
 		}
 	}
 

@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.apache.tomcat.jni.User"/>
-    <fullyQualifiedTypeName name="org.apache.tomcat.util.buf.Utf8Decoder"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="org.apache.catalina.connector.Response"/>
     <fullyQualifiedTypeName name="javax.swing.text.html.HTML"/>
     <fullyQualifiedTypeName name="javax.swing.text.html.HTML.Attribute"/>
-    <fullyQualifiedTypeName name="javax.websocket.Session"/>
     <fullyQualifiedTypeName name="com.saeyan.dao.MemberDAO"/>
     <fullyQualifiedTypeName name="com.saeyan.dto.MemberVO"/>
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
@@ -55,8 +52,12 @@
     <fullyQualifiedTypeName name="com.ott.controller.action.Action"/>
     <fullyQualifiedTypeName name="com.ott.controller.util.DBManager"/>
     <fullyQualifiedTypeName name="com.ott.controller.dao.MemberDAO"/>
-    <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="com.ott.dao.MemberDAO"/>
     <fullyQualifiedTypeName name="com.ott.dto.MemberVO"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="java.util.Properties"/>
+    <fullyQualifiedTypeName name="javax.websocket.Session"/>
+    <fullyQualifiedTypeName name="com.ott.util.DBManager"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="com.ott.dto.CommentVO"/>
 </qualifiedTypeNameHistroy>

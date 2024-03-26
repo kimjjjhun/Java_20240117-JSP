@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="css/Login.css">
 <!-- member.js 유효성검사를 하기위한 스크립트 -->
-<script src="script/member.js"></script>
+<script src="script/Member.js"></script>
 <title>Insert title here</title>
 </head>
 <body>

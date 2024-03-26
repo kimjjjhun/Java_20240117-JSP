@@ -3,17 +3,16 @@
 <%@taglibprefix ="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
-<%@ include file="header.jsp"%>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- login.css를 사용하기위한 링크 -->
-<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="css/Login.css">
 
 <!-- member.js 스크립트 -->
-<script src="script/member.js"></script>
+<script src="script/Member.js"></script>
 <!-- jquery 스크립트 -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 

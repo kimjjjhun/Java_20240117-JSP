@@ -13,7 +13,7 @@ import com.ott.dao.MemberDAO;
 public class MemberFindpwAction implements Action {
 
 	@Override
-	public void exeute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
@@ -27,9 +27,9 @@ public class MemberFindpwAction implements Action {
 		
 		request.setAttribute("pwd", pwd);
 		
-		System.out.println("pwd " + pwd);
+		System.out.println(" pwd " + pwd);
 		
-		request.getRequestDispatcher("member/findPwResult.jsp").forward(request, response);
+		request.getRequestDispatcher("member/FindPwResult.jsp").forward(request, response);
 	}
 
 }

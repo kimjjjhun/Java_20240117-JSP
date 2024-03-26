@@ -69,7 +69,7 @@ public class MemberDAO {
 			
 			pstmt = con.prepareStatement(sql);
 			
-			pstmt.setString(1, mVo.getUserid());
+			pstmt.setString(1, mVo.getUserId());
 			pstmt.setInt(2, mVo.getAdmin());
 			pstmt.setString(3, mVo.getName());
 			pstmt.setString(4, mVo.getPwd());
@@ -137,7 +137,7 @@ public class MemberDAO {
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
-				mVo.setUserid(rs.getString("userid"));
+				mVo.setUserId(rs.getString("userid"));
 				mVo.setAdmin(rs.getInt("admin"));
 				mVo.setName(rs.getString("name"));
 				mVo.setPwd(rs.getString("pwd"));
@@ -204,32 +204,5 @@ public class MemberDAO {
 				DBManager.close(con, pstmt, rs);
 			}
 			return pwd;
-		}
-		//카카오로그인 db이메일 체크
-		public boolean checkEmailExists(String email) {
-			boolean result = false;
-			Connection con = null;
-			PreparedStatement pstmt = null;
-			ResultSet rs = null;
-			
-			try {
-				con = DBManager.getConnection();
-				String sql = "select count(*) from member where email = ?";
-				pstmt = con.prepareStatement(sql);
-				pstmt.setString(1,email);
-				rs= pstmt.executeQuery();
-				
-				if(rs.next()) {
-					int count = rs.getInt(1);
-					if(count > 0) {
-						result = true;
-					}
-				}
-			}	catch(Exception e) {
-				e.printStackTrace();
-			}finally {
-				DBManager.close(con, pstmt, rs);
-			}
-			return result;
 		}
 }

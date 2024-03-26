@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- join.css를 사용하기위한 링크 -->
-<link rel="stylesheet" href="css/join.css">
+<link rel="stylesheet" href="css/Join.css">
 
 <!-- css에 아이콘을 넣기위해서 링크추가 -->
 <script src="https://kit.fontawesome.com/d41dbe5e59.js"
@@ -22,7 +22,7 @@
 	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
 <!-- member.js 유효성검사를 하기위한 스크립트 -->
-<script src="script/member.js"></script>
+<script src="script/Member.js"></script>
 
 <title>join</title>
 </head>
@@ -111,7 +111,7 @@
 					<label for="address"><i class="fa-solid fa-map"></i></label>
 					<!-- <input type="text" name="address" id="address" placeholder="주 소" required> -->
 
-					<input type="text" id="sample6_postcode" placeholder="우편번호">
+					<input type="text" id="sample6_postcode" name="addressnum" placeholder="우편번호">
 				</div>
 
 				<div class="signbox" style="text-align: center;">

@@ -13,7 +13,7 @@ import com.ott.dao.MemberDAO;
 public class MemberIdcheckAction implements Action {
 
 	@Override
-	public void exeute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		System.out.println("테스트");
 		
@@ -26,7 +26,7 @@ public class MemberIdcheckAction implements Action {
 		request.setAttribute("userid",userid);
 		request.setAttribute("result",result);
 		
-		request.getRequestDispatcher("member/idcheck.jsp").forward(request, response);
+		request.getRequestDispatcher("member/IdCheck.jsp").forward(request, response);
 		
 	}
 
